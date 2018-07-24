@@ -1,0 +1,60 @@
+{
+  "name": "@u-wave/react-translate",
+  "version": "0.0.0",
+  "description": "Small translations for React apps with @u-wave/translate.",
+  "main": "dist/react-translate.js",
+  "module": "dist/react-translate.mjs",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "rollup -c",
+    "lint": "eslint --cache .",
+    "test": "npm run lint && cross-env BABEL_ENV=test mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/u-wave/react-translate.git"
+  },
+  "keywords": [
+    "react",
+    "media-query",
+    "css",
+    "responsive"
+  ],
+  "author": "Renée Kooi <renee@kooi.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/u-wave/react-translate/issues"
+  },
+  "homepage": "https://github.com/u-wave/react-translate#readme",
+  "dependencies": {
+    "prop-types": "^15.6.1"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.54",
+    "@babel/preset-env": "7.0.0-beta.54",
+    "@babel/preset-react": "7.0.0-beta.54",
+    "@babel/register": "7.0.0-beta.54",
+    "@u-wave/translate": "^1.0.0",
+    "cross-env": "^5.1.4",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "expect": "^1.20.2",
+    "mocha": "^5.1.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-test-renderer": "^16.3.2",
+    "rollup": "^0.63.0",
+    "rollup-plugin-babel": "^4.0.0-beta.7"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "expect"
+    ]
+  }
+}
