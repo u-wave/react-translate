@@ -145,7 +145,7 @@ class TranslateWrap extends React.Component {
 [Install]: #install
 [Usage]: #usage
 [Props]: #props
-[Demo]: https://u-wave.github.io/react-translate
+[Demo]: https://u-wave.net/react-translate
 [Demo source code]: ./example
 [MIT]: ./LICENSE
 [@u-wave/translate]: https://github.com/u-wave/translate
