@@ -1,6 +1,6 @@
 {
   "name": "@u-wave/react-translate",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Small translations for React apps with @u-wave/translate.",
   "main": "dist/react-translate.js",
   "module": "dist/react-translate.mjs",
