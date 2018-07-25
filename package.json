@@ -10,7 +10,8 @@
     "lint": "eslint --cache .",
     "test:mocha": "cross-env BABEL_ENV=test mocha",
     "cov": "nyc npm run test:mocha",
-    "test": "npm run lint && npm run test:mocha"
+    "test": "npm run lint && npm run test:mocha",
+    "test:ci": "npm run lint && npm run cov"
   },
   "repository": {
     "type": "git",

@@ -2,3 +2,4 @@ node_modules
 example/bundle.js
 example/frame-bundle.js
 dist
+coverage
