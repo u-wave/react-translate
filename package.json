@@ -5,7 +5,7 @@
   "main": "dist/react-translate.js",
   "module": "dist/react-translate.mjs",
   "scripts": {
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "build": "rollup -c",
     "lint": "eslint --cache .",
     "test:mocha": "cross-env BABEL_ENV=test mocha",
