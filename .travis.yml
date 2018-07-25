@@ -5,6 +5,9 @@ node_js:
   - "8"
   - "6"
 
+after_script:
+  - 'if [[ x$TRAVIS_NODE_VERSION == xstable ]]; then npm i -g coveralls; ./node_modules/.bin/nyc report --reporter=text-lcov | coveralls; fi'
+
 before_deploy:
   - cd example && npm install && cd ..
   - mkdir _deploy
