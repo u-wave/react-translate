@@ -13,7 +13,7 @@ after_script:
 before_deploy:
   - cd example && npm install && cd ..
   - mkdir _deploy
-  - cp example/bundle.js example/index.html example/frame-bundle.js example/frame.html _deploy
+  - cp example/bundle.js example/index.html _deploy
 deploy:
   provider: pages
   skip-cleanup: true
