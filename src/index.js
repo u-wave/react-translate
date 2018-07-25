@@ -8,6 +8,7 @@ export const TranslateProvider = ({ translator, children }) => (
     {children}
   </Provider>
 );
+/* istanbul ignore next */
 if (process.env.NODE_ENV !== 'production') {
   TranslateProvider.propTypes = {
     translator: PropTypes.shape({
@@ -17,17 +18,6 @@ if (process.env.NODE_ENV !== 'production') {
     children: PropTypes.node.isRequired,
   };
 }
-
-export const withTranslator = () => Component => props => (
-  <Consumer>
-    {translator => (
-      <Component
-        {...props}
-        translator={translator}
-      />
-    )}
-  </Consumer>
-);
 
 export const translate = () => Component => props => (
   <Consumer>
@@ -51,6 +41,7 @@ export const Interpolate = props => (
     )}
   </Consumer>
 );
+/* istanbul ignore next */
 if (process.env.NODE_ENV !== 'production') {
   Interpolate.propTypes = {
     i18nKey: PropTypes.string.isRequired,
