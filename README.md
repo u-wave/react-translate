@@ -7,7 +7,7 @@ React components for [@u-wave/translate][].
 [![Build Status](https://travis-ci.com/u-wave/react-translate.svg?branch=master)](https://travis-ci.com/u-wave/react-translate)
 [![Coverage Status](https://coveralls.io/repos/github/u-wave/react-translate/badge.svg?branch=master)](https://coveralls.io/github/u-wave/react-translate?branch=master)
 [![npm](https://img.shields.io/npm/v/@u-wave/react-translate.svg)](https://npmjs.com/package/@u-wave/react-translate)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/@u-wave/react-translate.svg)](https://bundlephobia.com/result?p=@u-wave/react-translate) [![Greenkeeper badge](https://badges.greenkeeper.io/u-wave/react-translate.svg)](https://greenkeeper.io/)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@u-wave/react-translate.svg)](https://bundlephobia.com/result?p=@u-wave/react-translate)
 
 ## Install
 
