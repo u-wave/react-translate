@@ -44,18 +44,18 @@
     "babel-plugin-istanbul": "^4.1.6",
     "cross-env": "^5.1.4",
     "eslint": "^5.3.0",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-import": "^2.11.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-react": "^7.11.1",
     "expect": "^1.20.2",
     "mocha": "^5.1.1",
     "nyc": "^12.0.2",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-test-renderer": "^16.3.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-test-renderer": "^16.4.2",
     "rollup": "^0.64.1",
-    "rollup-plugin-babel": "^4.0.0-beta.7"
+    "rollup-plugin-babel": "^4.0.0-beta.8"
   },
   "greenkeeper": {
     "ignore": [
