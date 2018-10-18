@@ -48,7 +48,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.11.1",
-    "expect": "^1.20.2",
+    "expect": "^23.6.0",
     "mocha": "^5.1.1",
     "nyc": "^13.0.1",
     "react": "^16.4.2",
@@ -56,10 +56,5 @@
     "react-test-renderer": "^16.4.2",
     "rollup": "^0.66.0",
     "rollup-plugin-babel": "^4.0.2"
-  },
-  "greenkeeper": {
-    "ignore": [
-      "expect"
-    ]
   }
 }
