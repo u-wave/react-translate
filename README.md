@@ -41,6 +41,14 @@ const AppTitle = translate()(({ t }) => (
   <h1>{t('title')}</h1>
 ));
 
+// In React 16.7+, use translation strings in function components via
+// the `useTranslator` hook.
+import { useTranslator } from '@u-wave/react-translate';
+const WelcomeMessage = ({ name }) => {
+  const { t } = useTranslator();
+  return <p>{t('welcome', { name })}</p>;
+};
+
 // Use React components inside translation strings.
 import { Interpolate } from '@u-wave/react-translate';
 const Welcome = ({ name }) => (
@@ -95,6 +103,19 @@ Translate the key given in the `i18nKey` prop. The other props are used as the i
 ```
 
 Here, the `name` prop is a React element, and it will be rendered correctly.
+
+### `const { t } = useTranslator()`
+
+> This is a React Hook, so it only works in React 16.7 and up!
+
+Get the `@u-wave/translate` instance from the context. Destructuring the `t` function is the recommended way to use this instance. This can be used in place of the `translate()` HOC in function components to avoid introducing additional nesting and PropTypes requirements. The `t` function is the same as the one you'd get from `translate()`.
+
+```js
+const Component = () => {
+  const { t } = useTranslator();
+  return ...
+};
+```
 
 ## Changing Language
 
