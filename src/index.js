@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const { Provider, Consumer } = React.createContext();
+const TranslateContext = React.createContext();
+const { Provider, Consumer } = TranslateContext;
 
 export const TranslateProvider = ({ translator, children }) => (
   <Provider value={translator}>
@@ -29,6 +30,8 @@ export const translate = () => Component => props => (
     )}
   </Consumer>
 );
+
+export const useTranslator = () => React.useContext(TranslateContext);
 
 export const Interpolate = props => (
   <Consumer>

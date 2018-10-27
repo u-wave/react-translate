@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import TestRenderer from 'react-test-renderer';
 import expect from 'expect';
 import Translator from '@u-wave/translate';
-import { TranslateProvider, translate, Interpolate } from '../src';
+import {
+  TranslateProvider,
+  translate,
+  Interpolate,
+  useTranslator,
+} from '../src';
 
 describe('translate', () => {
   const translator = new Translator({
@@ -58,5 +63,35 @@ describe('Interpolate', () => {
       { type: 'strong', props: {}, children: ['World'] },
       '!',
     ]);
+  });
+});
+
+describe('useTranslator', () => {
+  const translator = new Translator({
+    welcome: 'Welcome {{name}}!',
+  });
+
+  it('should accept React elements as interpolation data', () => {
+    // eslint-disable-next-line react/prop-types
+    const Component = ({ name }) => {
+      const { t } = useTranslator();
+      return (
+        <p>
+          {t('welcome', { name })}
+        </p>
+      );
+    };
+
+    const renderer = TestRenderer.create((
+      <TranslateProvider translator={translator}>
+        <Component name="nobody" />
+      </TranslateProvider>
+    ));
+
+    expect(renderer.toJSON()).toEqual({
+      type: 'p',
+      props: {},
+      children: ['Welcome nobody!'],
+    });
   });
 });
