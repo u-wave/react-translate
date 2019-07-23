@@ -1,39 +1,13 @@
 {
   "name": "@u-wave/react-translate",
-  "version": "1.1.1",
   "description": "Small translations for React apps with @u-wave/translate.",
-  "main": "dist/react-translate.js",
-  "module": "dist/react-translate.mjs",
-  "scripts": {
-    "prepare": "npm run build",
-    "build": "rollup -c",
-    "lint": "eslint --cache .",
-    "test:mocha": "cross-env BABEL_ENV=test mocha",
-    "cov": "nyc npm run test:mocha",
-    "test": "npm run lint && npm run test:mocha",
-    "test:ci": "npm run lint && npm run cov"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/u-wave/react-translate.git"
-  },
-  "keywords": [
-    "react",
-    "media-query",
-    "css",
-    "responsive"
-  ],
+  "version": "1.1.1",
   "author": "Renée Kooi <renee@kooi.me>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/u-wave/react-translate/issues"
   },
-  "homepage": "https://github.com/u-wave/react-translate#readme",
   "dependencies": {
     "prop-types": "^15.6.1"
-  },
-  "peerDependencies": {
-    "react": "^16.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -56,5 +30,31 @@
     "react-test-renderer": "^16.8.2",
     "rollup": "^1.1.0",
     "rollup-plugin-babel": "^4.0.2"
+  },
+  "homepage": "https://github.com/u-wave/react-translate#readme",
+  "keywords": [
+    "css",
+    "media-query",
+    "react",
+    "responsive"
+  ],
+  "license": "MIT",
+  "main": "dist/react-translate.js",
+  "module": "dist/react-translate.mjs",
+  "peerDependencies": {
+    "react": "^16.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/u-wave/react-translate.git"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "cov": "nyc npm run test:mocha",
+    "lint": "eslint --cache .",
+    "prepare": "npm run build",
+    "test": "npm run lint && npm run test:mocha",
+    "test:ci": "npm run lint && npm run cov",
+    "test:mocha": "cross-env BABEL_ENV=test mocha"
   }
 }
