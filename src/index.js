@@ -24,7 +24,7 @@ export const translate = () => (Component) => (props) => (
   <Consumer>
     {(translator) => (
       <Component
-        {...props}
+        {...props} // eslint-disable-line react/jsx-props-no-spreading
         t={translator.t}
       />
     )}
