@@ -20,9 +20,9 @@ if (process.env.NODE_ENV !== 'production') {
   };
 }
 
-export const translate = () => Component => props => (
+export const translate = () => (Component) => (props) => (
   <Consumer>
-    {translator => (
+    {(translator) => (
       <Component
         {...props}
         t={translator.t}
@@ -33,9 +33,9 @@ export const translate = () => Component => props => (
 
 export const useTranslator = () => React.useContext(TranslateContext);
 
-export const Interpolate = props => (
+export const Interpolate = (props) => (
   <Consumer>
-    {translator => (
+    {(translator) => (
       // Manually use createElement so we're not passing an array as children to React.
       // Passing the array would require us to add keys to each interpolated element
       // but we know that the shape will stay the same so it's safe to spread it and act

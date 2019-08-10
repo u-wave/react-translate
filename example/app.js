@@ -28,7 +28,7 @@ const LanguagePicker = translate()(({
   t, languages, currentLanguage, onChange,
 }) => (
   <div className="collection">
-    {languages.map(id => (
+    {languages.map((id) => (
       <button
         type="button"
         className={`collection-item ${id === currentLanguage ? 'active' : ''}`}
