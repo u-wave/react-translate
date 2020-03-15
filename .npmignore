@@ -1,2 +1,5 @@
 node_modules
 /example
+.eslintcache
+coverage
+.nyc_output
