@@ -20,5 +20,5 @@ deploy:
   github-token: $GITHUB_TOKEN
   local-dir: _deploy
   on:
-    branch: master
+    branch: default
     node: stable
