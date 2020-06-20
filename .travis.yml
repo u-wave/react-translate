@@ -6,9 +6,6 @@ jobs:
       name: Check linting
       script: npm run test:lint
     - node_js: stable
-      name: Check types
-      script: npm run test:types
-    - node_js: stable
       name: Test on stable Node.js
       script: npm run test:ci
       after_script: |
