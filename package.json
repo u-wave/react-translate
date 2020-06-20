@@ -52,10 +52,10 @@
   "scripts": {
     "build": "rollup -c",
     "cov": "nyc npm run test:mocha",
-    "lint": "eslint --cache .",
     "prepare": "npm run build",
-    "test": "npm run lint && npm run test:mocha",
-    "test:ci": "npm run lint && npm run cov",
+    "test": "npm run test:lint && npm run test:mocha",
+    "test:ci": "npm run test:lint && npm run cov",
+    "test:lint": "eslint --cache .",
     "test:mocha": "cross-env BABEL_ENV=test mocha"
   },
   "sideEffects": false
