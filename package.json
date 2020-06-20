@@ -56,7 +56,7 @@
     "prepare": "npm run build",
     "test": "npm run lint && npm run test:mocha",
     "test:ci": "npm run lint && npm run cov",
-    "test:mocha": "cross-env BABEL_ENV=test mocha"
+    "test:mocha": "cross-env BABEL_ENV=test mocha --require @babel/register"
   },
   "sideEffects": false
 }
