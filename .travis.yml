@@ -1,24 +1,30 @@
 language: node_js
-node_js:
-  - "stable"
-  - "12"
-  - "10"
-  - "8"
 
-script:
-  - npm run test:ci
-after_script:
-  - 'if [[ x$TRAVIS_NODE_VERSION == xstable ]]; then npm i -g coveralls; ./node_modules/.bin/nyc report --reporter=text-lcov | coveralls; fi'
-
-before_deploy:
-  - cd example && npm install && cd ..
-  - mkdir _deploy
-  - cp example/bundle.js example/index.html _deploy
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  local-dir: _deploy
-  on:
-    branch: default
-    node: stable
+jobs:
+  include:
+    - node_js: stable
+      name: Check linting
+      script: npm run test:lint
+    - node_js: stable
+      name: Test on stable Node.js
+      script: npm run test:ci
+      after_script: |
+        npm i -g coveralls
+        npx nyc report --reporter=text-lcov | coveralls
+      before_deploy:
+        - cd example && npm install && cd ..
+        - mkdir _deploy
+        - cp example/bundle.js example/index.html _deploy
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN
+        local-dir: _deploy
+        on:
+          branch: default
+    - node_js: 12
+      name: Test on Node.js 12
+      script: npm run test:ci
+    - node_js: 10
+      name: Test on Node.js 10
+      script: npm run test:ci
