@@ -10,24 +10,6 @@ var React = require('react');
 
 var PropTypes = require('prop-types');
 
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
 var TranslateContext = /*#__PURE__*/React.createContext();
 var Provider = TranslateContext.Provider,
     Consumer = TranslateContext.Consumer;
@@ -56,7 +38,7 @@ var translate = function translate() {
   return function (Component) {
     return function (props) {
       return /*#__PURE__*/React.createElement(Consumer, null, function (translator) {
-        return /*#__PURE__*/React.createElement(Component, _extends({}, props, {
+        return /*#__PURE__*/React.createElement(Component, Object.assign({}, props, {
           // eslint-disable-line react/jsx-props-no-spreading
           t: translator.t
         }));
@@ -283,7 +265,7 @@ var Translator = /*#__PURE__*/function () {
     });
 
     if (template === undefined) {
-      if (this["default"]) return this["default"].parts(key, data);
+      if (this["default"]) return this["default"].parts(key, data, options);
 
       if (options && options["throw"] === false) {
         return undefined;
