@@ -56,7 +56,8 @@
     "test": "npm run test:lint && npm run test:mocha",
     "test:ci": "npm run test:lint && npm run cov",
     "test:lint": "eslint --cache .",
-    "test:mocha": "cross-env BABEL_ENV=test mocha --require @babel/register"
+    "test:mocha": "cross-env BABEL_ENV=test mocha --require @babel/register",
+    "example": "npm install && cd example && npm install"
   },
   "sideEffects": false
 }
