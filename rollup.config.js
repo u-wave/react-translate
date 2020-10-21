@@ -17,7 +17,8 @@ export default {
   ],
 
   external: Object.keys(meta.dependencies)
-    .concat(Object.keys(meta.peerDependencies)),
+    .concat(Object.keys(meta.peerDependencies))
+    .concat(['react/jsx-runtime']),
   plugins: [
     babel({
       babelHelpers: 'bundled',
