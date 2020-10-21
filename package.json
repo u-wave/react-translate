@@ -28,8 +28,8 @@
     "mocha": "^8.0.1",
     "nyc": "^15.0.0",
     "react": "^17.0.0",
-    "react-dom": "^16.13.0",
-    "react-test-renderer": "^16.13.0",
+    "react-dom": "^17.0.0",
+    "react-test-renderer": "^17.0.0",
     "rollup": "^2.0.6"
   },
   "homepage": "https://github.com/u-wave/react-translate#readme",
@@ -43,7 +43,7 @@
   "main": "dist/react-translate.js",
   "module": "dist/react-translate.mjs",
   "peerDependencies": {
-    "react": "^16.3.0"
+    "react": "^17.0.0"
   },
   "repository": {
     "type": "git",
