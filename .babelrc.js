@@ -8,9 +8,7 @@ module.exports = {
       loose: true,
       targets: TEST ? { node: 'current' } : {},
     }],
-    ['@babel/react', {
-      useBuiltIns: true,
-    }],
+    ['@babel/react', { runtime: 'automatic' }],
   ],
   plugins: TEST ? ['istanbul'] : [],
 };
