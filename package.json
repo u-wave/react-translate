@@ -27,7 +27,7 @@
     "expect": "^26.0.1",
     "mocha": "^8.0.1",
     "nyc": "^15.0.0",
-    "react": "^16.13.0",
+    "react": "^17.0.0",
     "react-dom": "^16.13.0",
     "react-test-renderer": "^16.13.0",
     "rollup": "^2.0.6"
