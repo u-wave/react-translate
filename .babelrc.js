@@ -1,14 +1,18 @@
-const TEST = process.env.BABEL_ENV === 'test';
-const CJS = process.env.BABEL_ENV === 'cjs';
+module.exports = (api) => {
+  const isTesting = api.caller((caller) => caller.name === '@babel/register');
+  const isBrowserify = api.caller((caller) => caller.name === 'babelify');
 
-module.exports = {
-  presets: [
-    ['@babel/env', {
-      modules: TEST || CJS ? 'commonjs' : false,
-      loose: true,
-      targets: TEST ? { node: 'current' } : {},
-    }],
-    ['@babel/react', { runtime: 'automatic' }],
-  ],
-  plugins: TEST ? ['istanbul'] : [],
+  return {
+    presets: [
+      ['@babel/preset-env', {
+        modules: isTesting || isBrowserify ? 'commonjs' : false,
+        loose: true,
+        targets: isTesting ? { node: 'current' } : null,
+      }],
+      ['@babel/preset-react', {
+        runtime: 'automatic',
+      }],
+    ],
+    plugins: isTesting ? ['istanbul'] : [],
+  };
 };

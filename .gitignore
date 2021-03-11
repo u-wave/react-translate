@@ -1,6 +1,7 @@
-node_modules
-/dist
 .eslintcache
-package-lock.json
-coverage
 .nyc_output
+/dist
+/example/bundle.js
+coverage
+node_modules
+package-lock.json
