@@ -41,7 +41,7 @@
   ],
   "license": "MIT",
   "main": "dist/react-translate.js",
-  "module": "dist/react-translate.mjs",
+  "module": "dist/react-translate.es.js",
   "peerDependencies": {
     "react": "^17.0.0"
   },
