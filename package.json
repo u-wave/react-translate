@@ -15,6 +15,7 @@
     "@babel/preset-react": "^7.8.3",
     "@babel/register": "^7.8.6",
     "@rollup/plugin-babel": "^5.0.3",
+    "@types/react": "^17.0.14",
     "@u-wave/translate": "^1.1.0",
     "babel-plugin-istanbul": "^6.0.0",
     "cross-env": "^7.0.2",
@@ -30,7 +31,8 @@
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-test-renderer": "^17.0.0",
-    "rollup": "^2.0.6"
+    "rollup": "^2.0.6",
+    "typescript": "^4.3.5"
   },
   "homepage": "https://github.com/u-wave/react-translate#readme",
   "keywords": [
@@ -42,6 +44,7 @@
   "license": "MIT",
   "main": "dist/react-translate.js",
   "module": "dist/react-translate.es.js",
+  "typings": "types/index.d.ts",
   "peerDependencies": {
     "react": "^17.0.0"
   },
@@ -50,7 +53,7 @@
     "url": "git+https://github.com/u-wave/react-translate.git"
   },
   "scripts": {
-    "prepare": "rollup -c",
+    "prepare": "tsc && rollup -c",
     "lint": "eslint --cache .",
     "test": "npm run lint && npm run tests-only",
     "tests-only": "nyc mocha --require @babel/register",
