@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Translator from '@u-wave/translate';
-import { TranslateProvider, translate, Interpolate } from '..';
+import { TranslateProvider, translate, Interpolate } from '@u-wave/react-translate'; // eslint-disable-line import/no-unresolved
 
 const NAME = 'Example User';
 

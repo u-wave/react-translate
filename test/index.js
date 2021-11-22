@@ -38,16 +38,18 @@ describe('Interpolate', () => {
   });
 
   it('should accept React elements as interpolation data', () => {
-    const Welcome = ({ name }) => (
-      <Interpolate
-        i18nKey="welcome"
-        name={(
-          <strong>
-            {name}
-          </strong>
-        )}
-      />
-    );
+    function Welcome({ name }) {
+      return (
+        <Interpolate
+          i18nKey="welcome"
+          name={(
+            <strong>
+              {name}
+            </strong>
+          )}
+        />
+      );
+    }
     Welcome.propTypes = {
       name: PropTypes.string.isRequired,
     };
@@ -73,14 +75,14 @@ describe('useTranslator', () => {
 
   it('should accept React elements as interpolation data', () => {
     // eslint-disable-next-line react/prop-types
-    const Component = ({ name }) => {
+    function Component({ name }) {
       const { t } = useTranslator();
       return (
         <p>
           {t('welcome', { name })}
         </p>
       );
-    };
+    }
 
     const renderer = TestRenderer.create((
       <TranslateProvider translator={translator}>

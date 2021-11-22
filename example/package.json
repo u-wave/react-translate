@@ -5,19 +5,17 @@
   "version": "0.0.0-example",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "browserify -t babelify app.js > bundle.js",
+    "prepare": "esbuild --bundle app.js --loader:.js=jsx > bundle.js",
     "start": "ecstatic ."
   },
   "dependencies": {
+    "@u-wave/react-translate": "file:..",
     "@u-wave/translate": "^1.0.0",
     "ecstatic": "^4.0.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "babelify": "^10.0.0",
-    "browserify": "^17.0.0",
-    "cross-env": "^5.1.6"
+    "esbuild": "^0.13.15"
   }
 }
