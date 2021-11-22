@@ -22,13 +22,15 @@ const TranslateContext = React.createContext(undefined);
  * </TranslateProvider>
  * ```
  *
- * @param {{ translator: Translator, children: JSX.Element }} props
+ * @param {{ translator: Translator, children: React.ReactNode }} props
  */
-export const TranslateProvider = ({ translator, children }) => (
-  <TranslateContext.Provider value={translator}>
-    {children}
-  </TranslateContext.Provider>
-);
+export function TranslateProvider({ translator, children }) {
+  return (
+    <TranslateContext.Provider value={translator}>
+      {children}
+    </TranslateContext.Provider>
+  );
+}
 /* istanbul ignore next */
 if (process.env.NODE_ENV !== 'production') {
   TranslateProvider.propTypes = {
@@ -56,6 +58,11 @@ export function useTranslator() {
 }
 
 /**
+ * Get the translate function from the context. This is a higher-order component, only intended
+ * for use in class components. If you can, use `useTranslator()` instead.
+ *
+ * The translate function is passed in as the `t` prop.
+ *
  * @template {object} TProps
  * @returns {(Component: React.ComponentType<TProps>) =>
  *               React.ComponentType<TProps & { t: Translator['t'] }>}
