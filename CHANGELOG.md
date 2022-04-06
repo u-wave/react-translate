@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.2
+* Add React 18 to `peerDependencies` range.
+
 ## 2.0.1
 * Renames the "module" entry point to end in `.es.js`.
   `.mjs` has requirements that this package's compiled output did not adhere to.
