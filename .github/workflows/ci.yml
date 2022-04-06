@@ -13,10 +13,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: lts/*
-      - name: Install npm 8.x
-        run: '[[ "$(npm -v)" == "8.*" ]] || npm install --global npm@8'
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Check code style
         run: npm run lint
   test:
@@ -33,10 +31,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{matrix.node-version}}
-      - name: Install npm 8.x
-        run: '[[ "$(npm -v)" == "8.*" ]] || npm install --global npm@8'
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Install React ${{matrix.react-version}}
         if: matrix.react-version != '18.x'
         run: |
