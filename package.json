@@ -17,6 +17,7 @@
     "@rollup/plugin-babel": "^5.0.3",
     "@types/react": "^17.0.14",
     "@u-wave/translate": "^1.1.0",
+    "@u-wave/react-translate-example": "file:example",
     "babel-plugin-istanbul": "^6.0.0",
     "cross-env": "^7.0.2",
     "eslint": "^8.3.0",
@@ -58,12 +59,6 @@
     "test": "npm run lint && npm run tests-only",
     "tests-only": "nyc mocha --require @babel/register",
     "example": "npm install && cd example && npm install"
-  },
-  "workspaces": {
-    "packages": [
-      ".",
-      "./example"
-    ]
   },
   "sideEffects": false
 }
