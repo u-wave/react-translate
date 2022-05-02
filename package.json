@@ -16,8 +16,8 @@
     "@babel/register": "^7.8.6",
     "@rollup/plugin-babel": "^5.0.3",
     "@types/react": "^17.0.14",
-    "@u-wave/translate": "^1.1.0",
     "@u-wave/react-translate-example": "file:example",
+    "@u-wave/translate": "^1.1.0",
     "babel-plugin-istanbul": "^6.0.0",
     "cross-env": "^7.0.2",
     "eslint": "^8.3.0",
@@ -26,8 +26,8 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
-    "expect": "^27.0.2",
-    "mocha": "^9.0.0",
+    "expect": "^28.0.2",
+    "mocha": "^10.0.0",
     "nyc": "^15.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -58,7 +58,7 @@
     "lint": "eslint --cache .",
     "test": "npm run lint && npm run tests-only",
     "tests-only": "nyc mocha --require @babel/register",
-    "example": "npm install && cd example && npm install"
+    "example": "npm run --prefix example build && npm run --prefix example start"
   },
   "sideEffects": false
 }
