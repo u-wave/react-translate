@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "react-translate-example",
+  "name": "@u-wave/react-translate-example",
   "description": "React-Translate example.",
   "version": "0.0.0-example",
   "scripts": {
@@ -12,10 +12,8 @@
     "@u-wave/react-translate": "file:..",
     "@u-wave/translate": "^1.0.0",
     "ecstatic": "^4.0.0",
+    "esbuild": "^0.14.29",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
-  },
-  "devDependencies": {
-    "esbuild": "^0.14.29"
   }
 }
