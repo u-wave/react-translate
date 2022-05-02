@@ -54,7 +54,8 @@
     "prepare": "rollup -c",
     "lint": "eslint --cache .",
     "test": "npm run lint && npm run tests-only",
-    "tests-only": "nyc mocha --require @babel/register"
+    "tests-only": "nyc mocha --require @babel/register",
+    "example": "npm run --prefix example build && npm run --prefix example start"
   },
   "sideEffects": false
 }
