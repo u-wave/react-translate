@@ -1,6 +1,7 @@
+import fs from 'fs';
 import babel from '@rollup/plugin-babel';
 
-const meta = require('./package.json');
+const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 process.env.BABEL_ENV = 'rollup';
 
@@ -9,15 +10,14 @@ export default {
   output: [
     {
       format: 'cjs',
-      file: meta.main,
+      file: pkg.main,
       exports: 'named',
-      interop: false,
     },
-    { format: 'es', file: meta.module },
+    { format: 'es', file: pkg.module },
   ],
 
-  external: Object.keys(meta.dependencies)
-    .concat(Object.keys(meta.peerDependencies))
+  external: Object.keys(pkg.dependencies)
+    .concat(Object.keys(pkg.peerDependencies))
     .concat(['react/jsx-runtime']),
   plugins: [
     babel({
