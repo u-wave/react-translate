@@ -5,7 +5,7 @@ const meta = require('./package.json');
 process.env.BABEL_ENV = 'rollup';
 
 export default {
-  input: './src/index.js',
+  input: './src/index.jsx',
   output: [
     {
       format: 'cjs',
