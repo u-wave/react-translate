@@ -1,18 +1,10 @@
 module.exports = (api) => {
-  const isTesting = api.caller((caller) => caller.name === '@babel/register');
-  const isBrowserify = api.caller((caller) => caller.name === 'babelify');
+  api.cache(true);
 
   return {
     presets: [
-      ['@babel/preset-env', {
-        modules: isTesting || isBrowserify ? 'commonjs' : false,
-        loose: true,
-        targets: isTesting ? { node: 'current' } : null,
-      }],
-      ['@babel/preset-react', {
-        runtime: 'automatic',
-      }],
+      ['@babel/preset-env', { modules: false, loose: true }],
+      ['@babel/preset-react', { runtime: 'automatic' }],
     ],
-    plugins: isTesting ? ['istanbul'] : [],
   };
 };

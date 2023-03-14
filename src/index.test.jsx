@@ -1,14 +1,18 @@
+import {
+  expect,
+  describe,
+  it,
+} from 'vitest';
 import React from 'react';
 import PropTypes from 'prop-types';
 import TestRenderer from 'react-test-renderer';
-import expect from 'expect';
 import Translator from '@u-wave/translate';
 import {
   TranslateProvider,
   translate,
   Interpolate,
   useTranslator,
-} from '../src';
+} from './index';
 
 describe('translate', () => {
   const translator = new Translator({

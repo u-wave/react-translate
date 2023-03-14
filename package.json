@@ -13,11 +13,10 @@
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
-    "@babel/register": "^7.8.6",
     "@rollup/plugin-babel": "^6.0.0",
     "@u-wave/react-translate-example": "file:example",
     "@u-wave/translate": "^1.1.0",
-    "babel-plugin-istanbul": "^6.0.0",
+    "@vitest/coverage-c8": "^0.29.2",
     "cross-env": "^7.0.2",
     "eslint": "^8.3.0",
     "eslint-config-airbnb": "^19.0.0",
@@ -25,13 +24,11 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
-    "expect": "^29.2.0",
-    "mocha": "^10.0.0",
-    "nyc": "^15.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-test-renderer": "^18.0.0",
-    "rollup": "^2.0.6"
+    "rollup": "^2.0.6",
+    "vitest": "^0.29.2"
   },
   "homepage": "https://github.com/u-wave/react-translate#readme",
   "keywords": [
@@ -54,7 +51,7 @@
     "prepare": "rollup -c",
     "lint": "eslint --cache .",
     "test": "npm run lint && npm run tests-only",
-    "tests-only": "nyc mocha --require @babel/register",
+    "tests-only": "vitest run --coverage.enabled --coverage.reporter=lcov --coverage.reporter=text --coverage.100",
     "example": "npm run --prefix example build && npm run --prefix example start"
   },
   "sideEffects": false
