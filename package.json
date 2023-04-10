@@ -28,7 +28,7 @@
     "react-dom": "^18.0.0",
     "react-test-renderer": "^18.0.0",
     "rollup": "^2.0.6",
-    "vitest": "^0.29.2"
+    "vitest": "^0.30.0"
   },
   "homepage": "https://github.com/u-wave/react-translate#readme",
   "keywords": [
