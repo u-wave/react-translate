@@ -16,7 +16,7 @@
     "@rollup/plugin-babel": "^6.0.0",
     "@u-wave/react-translate-example": "file:example",
     "@u-wave/translate": "^1.1.0",
-    "@vitest/coverage-c8": "^0.29.2",
+    "@vitest/coverage-c8": "^0.31.0",
     "cross-env": "^7.0.2",
     "eslint": "^8.3.0",
     "eslint-config-airbnb": "^19.0.0",
