@@ -5,7 +5,7 @@
   "version": "0.0.0-example",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild --bundle app.js --loader:.js=jsx > bundle.js",
+    "build": "esbuild --bundle app.jsx > bundle.js",
     "start": "ecstatic ."
   },
   "dependencies": {
