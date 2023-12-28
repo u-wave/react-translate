@@ -26,3 +26,9 @@ updates:
     babel:
       patterns:
       - "@babel/*"
+    eslint:
+      patterns:
+      - "eslint"
+      - "eslint-plugin-*"
+      - "eslint-config-*"
+      - "@typescript-eslint/*"
