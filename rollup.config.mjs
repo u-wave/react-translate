@@ -1,8 +1,7 @@
+import * as fs from 'node:fs';
 import babel from '@rollup/plugin-babel';
 
-const meta = require('./package.json');
-
-process.env.BABEL_ENV = 'rollup';
+const meta = JSON.parse(fs.readFileSync(new URL('./package.json', import.meta.url), 'utf8'));
 
 export default {
   input: './src/index.jsx',
@@ -11,7 +10,7 @@ export default {
       format: 'cjs',
       file: meta.main,
       exports: 'named',
-      interop: false,
+      interop: 'esModule',
     },
     { format: 'es', file: meta.module },
   ],
