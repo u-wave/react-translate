@@ -24659,31 +24659,26 @@
   var import_prop_types = __toESM(require_prop_types());
   var import_jsx_runtime = __toESM(require_jsx_runtime());
   function _extends() {
-    _extends = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
+    return _extends = Object.assign ? Object.assign.bind() : function(n) {
+      for (var e = 1; e < arguments.length; e++) {
+        var t = arguments[e];
+        for (var r in t)
+          ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
       }
-      return target;
-    };
-    return _extends.apply(this, arguments);
+      return n;
+    }, _extends.apply(null, arguments);
   }
-  function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null)
+  function _objectWithoutPropertiesLoose(r, e) {
+    if (null == r)
       return {};
-    var target = {};
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        if (excluded.indexOf(key) >= 0)
+    var t = {};
+    for (var n in r)
+      if ({}.hasOwnProperty.call(r, n)) {
+        if (e.includes(n))
           continue;
-        target[key] = source[key];
+        t[n] = r[n];
       }
-    }
-    return target;
+    return t;
   }
   var _excluded = ["i18nKey"];
   var TranslateContext = /* @__PURE__ */ import_react.default.createContext();
