@@ -18,7 +18,7 @@
     "@u-wave/translate": "^1.1.0",
     "@vitest/coverage-v8": "^2.0.2",
     "cross-env": "^7.0.2",
-    "eslint": "^8.3.0",
+    "eslint": "^9.11.0",
     "eslint-config-airbnb": "^19.0.0",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-jsx-a11y": "^6.3.1",
