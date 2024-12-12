@@ -41,7 +41,7 @@
   "main": "dist/react-translate.js",
   "module": "dist/react-translate.es.js",
   "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0"
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "repository": {
     "type": "git",
