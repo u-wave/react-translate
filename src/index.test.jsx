@@ -5,7 +5,7 @@ import {
 } from 'vitest';
 import React from 'react';
 import PropTypes from 'prop-types';
-import TestRenderer from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
 import Translator from '@u-wave/translate';
 import {
   TranslateProvider,
@@ -21,18 +21,18 @@ describe('translate', () => {
 
   it('should inject a `t` prop', () => {
     const Component = translate()(({ t }) => (
-      <p>
+      <p data-testid="t">
         {t('test')}
       </p>
     ));
 
-    const renderer = TestRenderer.create((
+    render((
       <TranslateProvider translator={translator}>
         <Component />
       </TranslateProvider>
     ));
 
-    expect(renderer.toJSON().children).toEqual(['key']);
+    expect(screen.getByTestId('t').textContent).toEqual('key');
   });
 });
 
@@ -44,31 +44,30 @@ describe('Interpolate', () => {
   it('should accept React elements as interpolation data', () => {
     function Welcome({ name }) {
       return (
-        <Interpolate
-          i18nKey="welcome"
-          name={(
-            <strong>
-              {name}
-            </strong>
-          )}
-        />
+        <p data-testid="interpolate">
+          <Interpolate
+            i18nKey="welcome"
+            name={(
+              <strong>
+                {name}
+              </strong>
+            )}
+          />
+        </p>
       );
     }
     Welcome.propTypes = {
       name: PropTypes.string.isRequired,
     };
 
-    const renderer = TestRenderer.create((
+    render((
       <TranslateProvider translator={translator}>
         <Welcome name="World" />
       </TranslateProvider>
     ));
 
-    expect(renderer.toJSON()).toEqual([
-      'Welcome ',
-      { type: 'strong', props: {}, children: ['World'] },
-      '!',
-    ]);
+    expect(screen.getByTestId('interpolate').textContent).toEqual('Welcome World!');
+    expect(screen.getByTestId('interpolate').innerHTML).toEqual('Welcome <strong>World</strong>!');
   });
 });
 
@@ -82,22 +81,18 @@ describe('useTranslator', () => {
     function Component({ name }) {
       const { t } = useTranslator();
       return (
-        <p>
+        <p data-testid="use">
           {t('welcome', { name })}
         </p>
       );
     }
 
-    const renderer = TestRenderer.create((
+    render((
       <TranslateProvider translator={translator}>
         <Component name="nobody" />
       </TranslateProvider>
     ));
 
-    expect(renderer.toJSON()).toEqual({
-      type: 'p',
-      props: {},
-      children: ['Welcome nobody!'],
-    });
+    expect(screen.getByTestId('use').textContent).toEqual('Welcome nobody!');
   });
 });
