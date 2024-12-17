@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.3
+* Add React 19 to `peerDependencies` range.
+
+Tests are no longer run on React 17 because writing tests for many React versions is difficult.
+However, `@u-wave/react-translate` v2 still works on React 17.
+
+No changes will be made to the implementation of this package in the v2.x line.
+
 ## 2.0.2
 * Add React 18 to `peerDependencies` range.
 
